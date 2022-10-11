@@ -8,6 +8,8 @@ function setup() {
     let squares = 20;
     createCanvas(canvw, canvh);
     background(255);
+    strokeWeight(10);
+    rect(50, 50, 850, 850);
     draw_lines(squares);
 }
 
@@ -16,9 +18,9 @@ function draw_lines(squares,) {
     size = 800 / squares;
     let offset = 10;
     var x1, x2, y1, y2;
-    for (var i = 0; i < squares; i++) {
+    for (var i = 0; i < squares - 1; i++) {
 
-        for (var j = 0; j < squares; j++) {
+        for (var j = 0; j < squares - 1; j++) {
 
             if (random() > 0.5) {
                 x1 = 100 + (i * size);
@@ -32,6 +34,7 @@ function draw_lines(squares,) {
                 y1 = 100 + (j * size);
                 y2 = 100 + (j + 1) * size;
             }
+            strokeWeight(random(3));
             line(x1, y1, x2, y2);
         }
     }
