@@ -7,29 +7,28 @@ function setup() {
 
     strokeWeight(10);
     colorMode(HSB);
-    rect(50, 50, 850, 850);
-    let numlines = 20;
+    rect(50, 50, 900, 900);
+    let numlines = 15;
     let resolution = 15;
     strokeWeight(2);
+    translate(100, 100);
     noLoop();
 
     let sizex = 800 / resolution;
     let sizey = 800 / numlines;
-    let lastx = 100;
-    let lasty = 100;
-    for (var i = 0; i < numlines; i++) {
-        lasty = 100 + (sizey * i);
-        lastx = 100;
+    let lastx = 0;
+    let lasty = 0;
+    for (var i = 0; i < numlines + 1; i++) {
+        lasty = (sizey * i);
+        lastx = 0;
 
-        for (var j = 1; j < resolution; j++) {
-            x = 100 + (j * sizex);
-            y = 100 + (i * sizey) + random(- 0.5 * (i) - 3, 0.5 * i + 3);
-            strokeWeight(.016 * (i ** 2) + 0.2);
+        for (var j = 1; j < resolution + 1; j++) {
+            x = (j * sizex);
+            y = (i * sizey) + random(- 0.75 * i - 3, 0.75 * i + 3);
+            strokeWeight(.03 * (i ** 2) + 0.2);
             line(lastx, lasty, x, y);
             lastx = x;
             lasty = y;
         }
-
     }
-
 }
