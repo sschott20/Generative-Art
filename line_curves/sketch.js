@@ -8,11 +8,12 @@ function setup() {
     strokeWeight(10);
     rect(50, 50, 850, 850);
     let numlines = 20;
-    let resolution = 20;
+    let resolution = 15;
     strokeWeight(2);
+    noLoop();
 
-    let sizex = 800 / resolution - 1;
-    let sizey = 800 / numlines - 1;
+    let sizex = 800 / resolution;
+    let sizey = 800 / numlines;
     let lastx = 100;
     let lasty = 100;
     for (var i = 0; i < numlines; i++) {
@@ -21,7 +22,8 @@ function setup() {
 
         for (var j = 1; j < resolution; j++) {
             x = 100 + (j * sizex);
-            y = 100 + (i * sizey) + random(-20, 20);
+            y = 100 + (i * sizey) + random(- 0.5 * i - 3, 0.5 * i + 3);
+            strokeWeight(0.25 * (i + 1));
             line(lastx, lasty, x, y);
             lastx = x;
             lasty = y;

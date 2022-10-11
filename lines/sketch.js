@@ -11,6 +11,8 @@ function setup() {
     strokeWeight(10);
     rect(50, 50, 850, 850);
     draw_lines(squares);
+    noLoop();
+
 }
 
 function draw_lines(squares,) {
