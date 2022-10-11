@@ -5,40 +5,34 @@ const {
 function setup() {
     let canvw = 1000;
     let canvh = 1000;
-    let squares = 10;
-
+    let squares = 20;
     createCanvas(canvw, canvh);
     background(255);
-    // draw_lines(25, 25, 200, 200, 0, 0);
-    // draw_lines(25, 25, 200, 200, 200, 200);
-
-    for (var i = 0; i < squares; i++) {
-        for (var j = 0; j < squares; j++) {
-            let size = canvw / squares;
-            // stroke(random(255), random(255), random(255));
-
-            draw_lines(5 + i, 5 + j, size * i, size * j, size / (i + 5), size / (j + 5));
-        }
-    }
-    // draw_lines(50, 50, 800, 800);
-    // save()
-
+    draw_lines(squares);
 }
 
-function draw_lines(rows, cols, offsetx, offsety, stepx, stepy) {
-    let frame = 0;
-    strokeWeight(1);
-    for (let i = frame; i < rows - frame; i++) {
-        for (let j = frame; j < cols - frame; j++) {
+function draw_lines(squares,) {
+    strokeWeight(3);
+    size = 800 / squares;
+    let offset = 10;
+    var x1, x2, y1, y2;
+    for (var i = 0; i < squares; i++) {
+
+        for (var j = 0; j < squares; j++) {
 
             if (random() > 0.5) {
-                line(offsetx + (i + 1) * stepx, offsety + j * stepy, offsetx + i * stepx, offsety + (j + 1) * stepy);
-            }
-            else if (random() > 0.5) {
-                line(offsetx + (i) * stepx, offsety + j * stepy, offsetx + (i + 1) * stepx, offsety + (j + 1) * stepy);
-            }
+                x1 = 100 + (i * size);
+                x2 = 100 + (i + 1) * size;
+                y1 = 100 + (j * size);
+                y2 = 100 + (j + 1) * size;
 
-
+            } else {
+                x1 = 100 + ((i + 1) * size);
+                x2 = 100 + (i * size);
+                y1 = 100 + (j * size);
+                y2 = 100 + (j + 1) * size;
+            }
+            line(x1, y1, x2, y2);
         }
     }
 }
