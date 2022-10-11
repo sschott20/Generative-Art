@@ -23,8 +23,8 @@ function setup() {
 
         for (var j = 1; j < resolution; j++) {
             x = 100 + (j * sizex);
-            y = 100 + (i * sizey) + random(- 0.5 * i - 3, 0.5 * i + 3);
-            strokeWeight(.014 * (i ** 2) + 0.2);
+            y = 100 + (i * sizey) + random(- 0.5 * (i) - 3, 0.5 * i + 3);
+            strokeWeight(.016 * (i ** 2) + 0.2);
             line(lastx, lasty, x, y);
             lastx = x;
             lasty = y;
