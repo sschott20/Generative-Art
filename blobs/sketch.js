@@ -13,29 +13,48 @@ function setup() {
 function draw_blobs() {
     colorMode(HSL);
 
-    let end = 8;
-    let size = 800 / end;
-    translate(100, 100);
+    let end = 6;
+    let size = 600 / end;
+    translate(200, 200);
     strokeWeight(0);
     for (var i = 0; i <= end; i++) {
         for (var j = 0; j <= end; j++) {
-            let base_size = random(30, 70);
+
+            let base_size = random(50, 80);
             push();
-            let col = random(30, 300);
-            translate(i * size, j * size);
-            fill(col, 30, 70);
-            circle(0, 0, base_size);
+            let col = random(360);
+            let offset = random(-20, 20);
 
-            fill(col, 50, 60);
-            circle(0, 0, base_size * 3 / 4);
 
-            fill(col, 60, 50);
-            circle(0, 0, base_size / 2);
+            translate(i * size + offset, j * size + offset);
+
+
+
+            fill(col, 30, 60);
+            blob(0, 0, base_size, base_size / 4);
+
+            fill(col, 50, 55);
+            blob(0, 0, base_size * 3 / 4, base_size / 8);
+
+            fill(col, 60, 45);
+            blob(0, 0, base_size / 2, base_size / 10);
 
             fill(col, 80, 40);
-            circle(0, 0, base_size / 4);
+            blob(0, 0, base_size / 4);
+            fill(0, 0, 0);
+            circle(0, 0, 10);
             pop();
 
         }
     }
+}
+
+function blob(x, y, d, ran) {
+
+    circle(x, y, d);
+    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
+    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
+    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
+    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
+    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
 }
