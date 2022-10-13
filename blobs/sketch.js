@@ -20,15 +20,11 @@ function draw_blobs() {
     for (var i = 0; i <= end; i++) {
         for (var j = 0; j <= end; j++) {
 
-            let base_size = random(50, 80);
+            let base_size = random(50, 70);
             push();
-            let col = random(360);
+            let col = random(0, 360);
             let offset = random(-20, 20);
-
-
             translate(i * size + offset, j * size + offset);
-
-
 
             fill(col, 30, 60);
             blob(0, 0, base_size, base_size / 4);
@@ -42,7 +38,8 @@ function draw_blobs() {
             fill(col, 80, 40);
             blob(0, 0, base_size / 4);
             fill(0, 0, 0);
-            circle(0, 0, 10);
+            circle(0, 0, 7);
+
             pop();
 
         }
@@ -50,11 +47,9 @@ function draw_blobs() {
 }
 
 function blob(x, y, d, ran) {
-
+    let num_blob = 6;
     circle(x, y, d);
-    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
-    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
-    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
-    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
-    circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
+    for (var i = 0; i < num_blob; i++) {
+        circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
+    }
 }

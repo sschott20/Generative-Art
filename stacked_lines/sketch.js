@@ -4,7 +4,7 @@ function setup() {
     createCanvas(1000, 1000);
     background(255);
     strokeWeight(10);
-    rect(50, 50, 900, 900);
+    rect(50, 50, 850, 850);
     strokeWeight(1);
     // noLoop();
 }
@@ -26,7 +26,7 @@ function drawline() {
 
     for (var i = 0; i < end; i++) {
         x = lastx + step;
-        distort =  i;
+        distort = i;
 
         y = random(lasty - distort, lasty + distort);
         line(lastx, lasty, x, y);
@@ -36,3 +36,6 @@ function drawline() {
 
 
 
+function mouseClicked() {
+    save("stacked_lines");
+}

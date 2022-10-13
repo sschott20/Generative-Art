@@ -39,14 +39,18 @@ function draw_lines(squares,) {
                 x2 = (i * size);
                 y1 = (j * size);
                 y2 = (j + 1) * size;
-                rx = (x1 + x2) / 2 +  random(-100, 100);
+                rx = (x1 + x2) / 2 + random(-100, 100);
                 ry = (y1 + y2) / 2;
             }
             strokeWeight(1);
 
-           
+
 
             curve(rx, ry, x1, y1, x2, y2, rx, ry);
         }
     }
+}
+
+function mouseClicked() {
+    save("tile_curves");
 }

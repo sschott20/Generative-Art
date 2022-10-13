@@ -26,5 +26,9 @@ function tree_fract(length, basex, basey, angle) {
     }
 }
 
+function onclick() {
+    save("tree_fract");
+}
+
 
 

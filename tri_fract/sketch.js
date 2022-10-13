@@ -18,20 +18,22 @@ function setup() {
 
 function tri_fract(x, y, length, sweight) {
     strokeWeight(sweight);
-    x1 = x - length / 2;
-    y1 = y + length;
+    let x1 = x - length / 2;
+    let y1 = y + length;
 
-    x2 = x + length / 2;
-    y2 = y + length;
+    let x2 = x + length / 2;
+    let y2 = y + length;
     triangle(x, y, x1, y1, x2, y2);
     if (length > 20) {
-        tri_fract(x, y, length / 2, sweight );
-        tri_fract(x2, y2, length / 2, sweight );
-
-        tri_fract(x1, y1, length / 2, sweight / 2);
+        tri_fract(x, y, length / 2, sweight);
+        tri_fract(x + length / 4, y2, length / 2, sweight);
+        tri_fract(x - length / 4, y1, length / 2, sweight / 2);
     }
 }
 
+function onclick() {
+    save("tri_fract");
+}
 
 
 
