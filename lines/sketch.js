@@ -36,8 +36,11 @@ function draw_lines(squares,) {
                 y1 = 100 + (j * size);
                 y2 = 100 + (j + 1) * size;
             }
-            strokeWeight(random(2));
+            strokeWeight(0.75);
             line(x1, y1, x2, y2);
         }
     }
+}
+function mouseClicked() {
+    save();
 }

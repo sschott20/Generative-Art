@@ -1,6 +1,4 @@
 function setup() {
-
-
     createCanvas(1000, 1000);
     background(255);
     strokeWeight(10);
@@ -10,9 +8,6 @@ function setup() {
 
     tri_fract(400, 0, 800, 1);
     noLoop();
-    // for (var i = 0; i < 50; i++) {
-    //     line(0, 50 * i, 800, 50 * i);
-    // }
 }
 
 
@@ -31,9 +26,6 @@ function tri_fract(x, y, length, sweight) {
     }
 }
 
-function onclick() {
-    save("tri_fract");
-}
 
 
 

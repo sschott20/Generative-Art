@@ -25,10 +25,14 @@ function setup() {
         for (var j = 1; j < resolution + 1; j++) {
             x = (j * sizex);
             y = (i * sizey) + random(- 0.75 * i - 3, 0.75 * i + 3);
-            strokeWeight(.03 * (i ** 2) + 0.2);
+            strokeWeight(.05 * (i ** 2) + 1);
             line(lastx, lasty, x, y);
             lastx = x;
             lasty = y;
         }
     }
+}
+
+function mouseClicked() {
+    save();
 }

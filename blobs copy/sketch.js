@@ -53,7 +53,3 @@ function blob(x, y, d, ran) {
         circle(x + random(-1 * ran, ran), y + random(- 1 * ran, ran), d);
     }
 }
-
-function mouseClicked() {
-    save();
-}
